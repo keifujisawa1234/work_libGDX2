@@ -15,7 +15,7 @@ class Player(texture: Texture, srcX: Int, srcY: Int, srcWidth: Int, srcHeight: I
         val PLAYER_STATE_FALL = 1
 
         // 速度
-        val PLAYER_JUMP_VELOCITY = 11.0f
+        val PLAYER_JUMP_VELOCITY = 9.0f
         val PLAYER_MOVE_VELOCITY = 20.0f
     }
 
