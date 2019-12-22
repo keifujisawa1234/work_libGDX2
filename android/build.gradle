@@ -17,7 +17,7 @@ android {
         exclude 'META-INF/robovm/ios/robovm.xml'
     }
     defaultConfig {
-        applicationId "jp.techacademy.taro.kirameki.jumpactiongame"
+        applicationId "net.ebisoba.jumpactiongame"
         minSdkVersion 9  // ←9に変更する
         targetSdkVersion 28
         versionCode 1
