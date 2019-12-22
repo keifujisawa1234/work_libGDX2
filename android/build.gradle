@@ -78,7 +78,7 @@ task run(type: Exec) {
     }
 
     def adb = path + "/platform-tools/adb"
-    commandLine "$adb", 'shell', 'am', 'start', '-n', 'jp.techacademy.taro.kirameki.jumpactiongame/jp.techacademy.taro.kirameki.jumpactiongame.AndroidLauncher'
+    commandLine "$adb", 'shell', 'am', 'start', '-n', 'net.ebisoba.taro.kirameki.jumpactiongame/net.ebisoba.taro.kirameki.jumpactiongame.AndroidLauncher'
 }
 
 // sets up the Android Eclipse project, using the old Ant based build.
