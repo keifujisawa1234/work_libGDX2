@@ -17,8 +17,8 @@ android {
         exclude 'META-INF/robovm/ios/robovm.xml'
     }
     defaultConfig {
-        applicationId "net.ebisoba.jumpactiongame"
-        minSdkVersion 9  // ←9に変更する
+        applicationId "net.ebisobaya.jumpactiongame"
+        minSdkVersion 14  // ←9に変更する
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -78,7 +78,7 @@ task run(type: Exec) {
     }
 
     def adb = path + "/platform-tools/adb"
-    commandLine "$adb", 'shell', 'am', 'start', '-n', 'net.ebisoba.taro.kirameki.jumpactiongame/net.ebisoba.taro.kirameki.jumpactiongame.AndroidLauncher'
+    commandLine "$adb", 'shell', 'am', 'start', '-n', 'net.ebisobaya.taro.kirameki.jumpactiongame/net.ebisobaya.taro.kirameki.jumpactiongame.AndroidLauncher'
 }
 
 // sets up the Android Eclipse project, using the old Ant based build.
@@ -137,5 +137,6 @@ idea {
 
 // 下記、追加する
 dependencies {
-    compile 'com.google.android.gms:play-services:6.+'
+//    implementation 'com.google.android.gms:play-services:6.+'
+    implementation 'com.google.android.gms:play-services-ads:18.3.0'
 }

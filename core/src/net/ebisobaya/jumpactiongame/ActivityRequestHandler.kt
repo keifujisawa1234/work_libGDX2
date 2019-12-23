@@ -1,4 +1,4 @@
-package net.ebisoba.jumpactiongame
+package net.ebisobaya.jumpactiongame
 
 interface ActivityRequestHandler {
     fun showAds(show: Boolean)

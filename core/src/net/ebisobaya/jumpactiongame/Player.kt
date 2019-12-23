@@ -1,4 +1,4 @@
-package net.ebisoba.jumpactiongame
+package net.ebisobaya.jumpactiongame
 
 import com.badlogic.gdx.graphics.Texture
 

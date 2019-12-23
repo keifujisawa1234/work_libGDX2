@@ -1,4 +1,4 @@
-package net.ebisoba.jumpactiongame
+package net.ebisobaya.jumpactiongame
 
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.ScreenAdapter
@@ -28,7 +28,8 @@ class ResultScreen(private val mGame: JumpActionGame, private val mScore: Int) :
         } // ←追加する
 
         // 背景の準備
-        val bgTexture = Texture("resultback.png")
+//        val bgTexture = Texture("resultback.png")
+        val bgTexture = Texture("back_398574.png")
         mBg = Sprite(TextureRegion(bgTexture, 0, 0, 540, 810))
         mBg.setSize(GUI_WIDTH, GUI_HEIGHT)
         mBg.setPosition(0f, 0f)

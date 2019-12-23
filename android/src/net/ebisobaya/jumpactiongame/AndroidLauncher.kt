@@ -1,4 +1,4 @@
-package net.ebisoba.jumpactiongame
+package net.ebisobaya.jumpactiongame
 
 import android.graphics.Color
 import android.os.Bundle
@@ -13,6 +13,9 @@ import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdSize
 import com.google.android.gms.ads.AdView
+
+// 追加
+import com.google.android.gms.ads.MobileAds;
 
 class AndroidLauncher : AndroidApplication(), ActivityRequestHandler {
     private lateinit var mAdView: AdView
@@ -31,6 +34,10 @@ class AndroidLauncher : AndroidApplication(), ActivityRequestHandler {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // 追加
+        MobileAds.initialize(this){}
+
 
         val config = AndroidApplicationConfiguration()
         val gameView = initializeForView(JumpActionGame(this), config)

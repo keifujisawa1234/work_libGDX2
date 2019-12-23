@@ -1,4 +1,4 @@
-package net.ebisoba.jumpactiongame
+package net.ebisobaya.jumpactiongame
 
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.Preferences // ←追加する
@@ -68,7 +68,8 @@ class GameScreen(private val mGame: JumpActionGame) : ScreenAdapter() {
 
     init {
         // 背景の準備
-        val bgTexture = Texture("back.png")
+//        val bgTexture = Texture("back.png")
+        val bgTexture = Texture("back_398574.png")
         // TextureRegionで切り出す時の原点は左上
         mBg = Sprite(TextureRegion(bgTexture, 0, 0, 540, 810))
         mBg.setSize(CAMERA_WIDTH, CAMERA_HEIGHT)
@@ -100,7 +101,7 @@ class GameScreen(private val mGame: JumpActionGame) : ScreenAdapter() {
         mHighScore = 0  // ←追加する
 
         // ハイスコアをPreferencesから取得する
-        mPrefs = Gdx.app.getPreferences("net.ebisoba.jumpactiongame") // ←追加する
+        mPrefs = Gdx.app.getPreferences("net.ebisobaya.jumpactiongame") // ←追加する
         mHighScore = mPrefs.getInteger("HIGHSCORE", 0) // ←追加する
 
         createStage()
@@ -177,9 +178,14 @@ class GameScreen(private val mGame: JumpActionGame) : ScreenAdapter() {
     private fun createStage() {
 
         // テクスチャの準備
-        val stepTexture = Texture("step.png")
-        val starTexture = Texture("star.png")
-        val playerTexture = Texture("uma.png")
+//        val stepTexture = Texture("step.png")
+        val stepTexture = Texture("ki_058905.png")
+
+//        val starTexture = Texture("star.png")
+        val starTexture = Texture("mushi_kuwagata.png")
+
+//        val playerTexture = Texture("uma.png")
+        val playerTexture = Texture("plant.png")
         val ufoTexture = Texture("ufo.png")
         val enemyTexture = Texture("enemy.png")
 
@@ -191,12 +197,14 @@ class GameScreen(private val mGame: JumpActionGame) : ScreenAdapter() {
             val type = if(mRandom.nextFloat() > 0.8f) Step.STEP_TYPE_MOVING else Step.STEP_TYPE_STATIC
             val x = mRandom.nextFloat() * (WORLD_WIDTH - Step.STEP_WIDTH)
 
-            val step = Step(type, stepTexture, 0, 0, 144, 36)
+//            val step = Step(type, stepTexture, 0, 0, 144, 36)
+            val step = Step(type, stepTexture, 0, 0, 3000, 1000)
             step.setPosition(x, y)
             mSteps.add(step)
 
             if (mRandom.nextFloat() > 0.6f) {
-                val star = Star(starTexture, 0, 0, 72, 72)
+//                val star = Star(starTexture, 0, 0, 72, 72)
+                val star = Star(starTexture, 0, 0, 372, 372)
                 star.setPosition(step.x + mRandom.nextFloat(), step.y + Star.STAR_HEIGHT + mRandom.nextFloat() * 3)
                 mStars.add(star)
             }
@@ -213,7 +221,8 @@ class GameScreen(private val mGame: JumpActionGame) : ScreenAdapter() {
         }
 
         // Playerを配置
-        mPlayer = Player(playerTexture, 0, 0, 72, 72)
+//        mPlayer = Player(playerTexture, 0, 0, 72, 72)
+        mPlayer = Player(playerTexture, 0, 0, 400, 400)
         mPlayer.setPosition(WORLD_WIDTH / 2 - mPlayer.width / 2, Step.STEP_HEIGHT)
 
         // ゴールのUFOを配置
